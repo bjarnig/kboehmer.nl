@@ -1,0 +1,7 @@
+
+mixin sidebar
+    .bs-component
+        if navSubLinksMany(page)
+            ul.breadcrumb
+                each link in navSubLinks(page)
+                    li(class=(page == link.key ? 'active' : null)): a(href=link.href)= link.label
